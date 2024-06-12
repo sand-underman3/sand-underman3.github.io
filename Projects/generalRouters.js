@@ -9,5 +9,6 @@ router.get("/", (req, res) => {
 
 router.get("/:site", (req, res) => {
     const siteQuery = req.params.site
+    res.render()
     res.status(200).send(`The site you have request is ${siteQuery}. unfortunately we DONT HAVE IT!!!!`)
 })
