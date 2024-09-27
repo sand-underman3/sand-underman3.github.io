@@ -13,6 +13,7 @@ app.get('/', (_, res) =>  {
   res.send(JSON.stringify(commandQueue.commandsQueue));
 });
 
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
