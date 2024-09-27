@@ -1,13 +1,18 @@
-const express = require("express")
+const express = require('express')
+const fs = require('fs')
 
 const app = express()
-app.set('view engine', 'ejs')
+const port = 3000;
 
-app.get("/", (req, res) => {
-    res.send("wsg my bb")
+fs.writeFile('.Misc/commandQueue.json', JSON.stringify(commandQueue.commandsQueue), 'utf8', (err) => {
+  
+});
+
+app.get('/', (_, res) =>  {
+  res.statusCode = 200;
+  res.send(JSON.stringify(commandQueue.commandsQueue));
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
-
-const GenRouters  = require("./Projects/generalRouters")
-app.use("/sites", GenRouters)
-
-app.listen(3000)
